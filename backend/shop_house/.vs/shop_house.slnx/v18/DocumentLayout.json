@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\repos c#\\shop_house\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "shop_house\\Services\\CartService.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Services\\CartService.cs",
+              "RelativeToolTip": "shop_house\\Services\\CartService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAAACQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-06T05:24:01.137Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

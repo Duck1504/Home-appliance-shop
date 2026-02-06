@@ -1,0 +1,289 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\repos c#\\shop_house\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/localhost/Shop_house/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\dtos\\checkoutdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\controllers\\checkoutcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\shop_house.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\shop_house.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\services\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\services\\checkoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\services\\interfaces\\icheckoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\services\\interfaces\\icheckoutservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\services\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|d:\\repos c#\\shop_house\\shop_house\\migrations\\20260203032716_oder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBCF2F25-2916-4CA3-3C36-D9A9C37D97D2}|shop_house\\shop_house.csproj|solutionrelative:shop_house\\migrations\\20260203032716_oder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "shop_house\\Controllers\\CategoryController.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "shop_house\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAAAEkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T06:07:28.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "dbo.Users.sql",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/localhost/Shop_house/True/SqlTable/dbo.Users.sql",
+              "ToolTip": "ViewDataWindow_MSSQL__/localhost/Shop_house/True/SqlTable/dbo.Users.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2026-02-04T06:02:25.011Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Program.cs",
+              "RelativeDocumentMoniker": "shop_house\\Program.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Program.cs",
+              "RelativeToolTip": "shop_house\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:35:00.477Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "shop_house\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CartController.cs",
+              "RelativeToolTip": "shop_house\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAADwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T06:20:11.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "shop_house\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "shop_house\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T06:03:20.764Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CheckoutController.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CheckoutController.cs",
+              "RelativeDocumentMoniker": "shop_house\\Controllers\\CheckoutController.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\CheckoutController.cs",
+              "RelativeToolTip": "shop_house\\Controllers\\CheckoutController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:09:45.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "shop_house\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "shop_house\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADMAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T01:41:03.515Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "shop_house\\Models\\CartItem.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Models\\CartItem.cs",
+              "RelativeToolTip": "shop_house\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:30:39.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CheckoutDTO.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\DTOs\\CheckoutDTO.cs",
+              "RelativeDocumentMoniker": "shop_house\\DTOs\\CheckoutDTO.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\DTOs\\CheckoutDTO.cs",
+              "RelativeToolTip": "shop_house\\DTOs\\CheckoutDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:08:40.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ICheckoutService.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Services\\Interfaces\\ICheckoutService.cs",
+              "RelativeDocumentMoniker": "shop_house\\Services\\Interfaces\\ICheckoutService.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Services\\Interfaces\\ICheckoutService.cs",
+              "RelativeToolTip": "shop_house\\Services\\Interfaces\\ICheckoutService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:28:53.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20260203032716_oder.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Migrations\\20260203032716_oder.cs",
+              "RelativeDocumentMoniker": "shop_house\\Migrations\\20260203032716_oder.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Migrations\\20260203032716_oder.cs",
+              "RelativeToolTip": "shop_house\\Migrations\\20260203032716_oder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:27:16.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CheckoutService.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Services\\CheckoutService.cs",
+              "RelativeDocumentMoniker": "shop_house\\Services\\CheckoutService.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Services\\CheckoutService.cs",
+              "RelativeToolTip": "shop_house\\Services\\CheckoutService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADQAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:29:19.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "shop_house.http",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\shop_house.http",
+              "RelativeDocumentMoniker": "shop_house\\shop_house.http",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\shop_house.http",
+              "RelativeToolTip": "shop_house\\shop_house.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-02-03T03:34:58.215Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "shop_house\\Models\\OrderDetail.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "shop_house\\Models\\OrderDetail.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:00:42.631Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "shop_house\\Models\\Order.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Models\\Order.cs",
+              "RelativeToolTip": "shop_house\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-03T03:00:38.971Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CartService.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Services\\CartService.cs",
+              "RelativeDocumentMoniker": "shop_house\\Services\\CartService.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Services\\CartService.cs",
+              "RelativeToolTip": "shop_house\\Services\\CartService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T06:21:13.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "D:\\repos c#\\shop_house\\shop_house\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "shop_house\\Services\\ProductService.cs",
+              "ToolTip": "D:\\repos c#\\shop_house\\shop_house\\Services\\ProductService.cs",
+              "RelativeToolTip": "shop_house\\Services\\ProductService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAACIAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-02T02:51:43.505Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
