@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Thêm danh mục (Admin)</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white min-h-screen">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <aside
+            class="w-64 bg-white dark:bg-gray-900 border-r border-gray-200 dark:border-gray-800 hidden lg:flex flex-col fixed h-full">
+            <div class="p-6 flex flex-col gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="bg-primary size-10 rounded-lg flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined">kitchen</span>
+                    </div>
+                    <div class="flex flex-col">
+                        <h1 class="text-[#111418] dark:text-white text-base font-bold leading-tight">Gia Dụng Hub</h1>
+                        <p class="text-[#617589] text-xs font-normal">Quản trị viên</p>
+                    </div>
+                </div>
+                <nav class="flex flex-col gap-1">
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="product_list_admin.html">
+                        <span class="material-symbols-outlined">dashboard</span>
+                        <span class="text-sm font-medium">Danh sách sản phẩm</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="product_admin.html">
+                        <span class="material-symbols-outlined">inventory_2</span>
+                        <span class="text-sm font-medium">Thêm sản phẩm</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="category_admin.html">
+                        <span class="material-symbols-outlined">category</span>
+                        <p class="text-sm font-medium">Danh mục</p>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">receipt_long</span>
+                        <span class="text-sm font-medium">Đơn hàng</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">group</span>
+                        <span class="text-sm font-medium">Khách hàng</span>
+                    </a>
+                    <a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-[#617589] hover:bg-blue-50 dark:hover:bg-gray-800 transition-colors"
+                        href="#">
+                        <span class="material-symbols-outlined">settings</span>
+                        <span class="text-sm font-medium">Cài đặt</span>
+                    </a>
+                </nav>
+            </div>
+            <div class="mt-auto p-6 border-t border-gray-200 dark:border-gray-800">
+                <div class="flex items-center gap-3">
+                    <div class="size-9 rounded-full bg-cover bg-center" data-alt="Avatar of admin user"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBeYYaYvJEA1ir-CE-bRqr7JFzvCCwVzUExNPrzV_zsGRkTdoqbMHlpt_3wx8mT-zJTAGoScPO-XOqmmASL9Q6q1ZVHSsMqdpoAo4-A5Zslqum0p4gNu9ZHc_QQ_iJ-6Z-l5W5OaxDT51mbMc4-FAZpmXlP9vngkKLVHinM9CJv_nuXEo4rcYwTM2QUC44kQC4vVGuNxAbCHxgj1Qfh3WN5U5N3slRKa-kdA_yNiKi9wls8Xxc3kvIeo-slhY81qYPXaDgufGlLPU8y')">
+                    </div>
+                    <div class="flex-1 overflow-hidden">
+                        <p class="text-sm font-bold truncate">Nguyễn Văn A</p>
+                        <p class="text-xs text-[#617589] truncate">admin@hub.vn</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <main class="flex-1 lg:ml-64 flex flex-col">
+            <!-- Top Navigation -->
+            <header
+                class="sticky top-0 z-30 flex items-center justify-between bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800 px-8 py-3">
+                <div class="flex items-center gap-4">
+                    <button class="lg:hidden p-2 text-gray-600">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">add_box</span>
+                        <h2 class="text-lg font-bold tracking-tight">Thêm sản phẩm mới</h2>
+                    </div>
+                </div>
+                <div class="flex items-center gap-4">
+                    <div class="hidden md:flex relative">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm">search</span>
+                        <input
+                            class="pl-10 pr-4 py-2 bg-gray-100 dark:bg-gray-800 border-none rounded-lg text-sm w-64 focus:ring-2 focus:ring-primary/50 transition-all"
+                            placeholder="Tìm kiếm tính năng..." type="text" />
+                    </div>
+                    <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500 relative">
+                        <span class="material-symbols-outlined">notifications</span>
+                        <span
+                            class="absolute top-2 right-2 size-2 bg-red-500 rounded-full border-2 border-white dark:border-gray-900"></span>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-gray-500">
+                        <span class="material-symbols-outlined">help</span>
+                    </button>
+                </div>
+            </header>
+
+            <div class="p-8 max-w-6xl mx-auto w-full">
+                <!-- Breadcrumbs -->
+                <div class="flex flex-wrap items-center gap-2 mb-2">
+                    <a class="text-[#617589] text-sm font-medium hover:text-primary" href="#">Admin</a>
+                    <span class="text-[#617589] text-sm">/</span>
+                    <a class="text-[#617589] text-sm font-medium hover:text-primary" href="#">Danh mục</a>
+                    <span class="text-[#617589] text-sm">/</span>
+                    <span class="text-[#111418] dark:text-white text-sm font-bold">Thêm danh mục</span>
+                </div>
+                <!-- Page Heading -->
+                <div class="flex flex-wrap justify-between gap-3 mb-8">
+                    <div class="flex flex-col gap-1">
+                        <h1
+                            class="text-[#111418] dark:text-white text-3xl font-black leading-tight tracking-[-0.033em]">
+                            Thêm danh mục mới</h1>
+                        <p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal">Thiết lập nhóm
+                            sản phẩm mới để khách hàng dễ dàng tìm kiếm.</p>
+                    </div>
+                </div>
+                <!-- Focused Form Card -->
+
+                <div
+                    class="bg-white dark:bg-background-dark border border-[#f0f2f4] dark:border-gray-800 rounded-xl shadow-sm p-8 max-w-2xl mx-auto w-full">
+                    <form id="categoryForm">
+                        <div class="space-y-8">
+
+                            <!-- ================= BASIC INFO ================= -->
+                            <section>
+                                <h2
+                                    class="text-[#111418] dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">info</span>
+                                    Thông tin cơ bản
+                                </h2>
+
+                                <div class="space-y-4">
+                                    <!-- Category Name -->
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-bold text-[#111418] dark:text-gray-300">
+                                            Tên danh mục <span class="text-red-500">*</span>
+                                        </label>
+                                        <input id="categoryName" type="text" placeholder="Ví dụ: Tủ lạnh, Máy giặt..."
+                                            class="w-full px-4 py-3 rounded-lg border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" />
+                                    </div>
+
+                                    <!-- Description (optional – chưa submit) -->
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-bold text-[#111418] dark:text-gray-300">
+                                            Mô tả ngắn
+                                        </label>
+                                        <textarea
+                                            class="w-full px-4 py-3 rounded-lg border border-[#dce0e5] dark:border-gray-700 bg-white dark:bg-gray-900 focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all"
+                                            rows="3" placeholder="Mô tả sơ lược về danh mục này..."></textarea>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- ================= IMAGE ================= -->
+                            <section>
+                                <h2
+                                    class="text-[#111418] dark:text-white text-lg font-bold mb-4 flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-primary">image</span>
+                                    Ảnh đại diện danh mục
+                                </h2>
+
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+
+                                    <!-- Upload -->
+                                    <div class="relative">
+                                        <div
+                                            class="border-2 border-dashed border-[#dce0e5] dark:border-gray-700 hover:border-primary rounded-xl p-8 flex flex-col items-center justify-center gap-3 cursor-pointer">
+                                            <div
+                                                class="size-12 rounded-full bg-primary/10 text-primary flex items-center justify-center">
+                                                <span class="material-symbols-outlined text-3xl">cloud_upload</span>
+                                            </div>
+                                            <div class="text-center">
+                                                <p class="text-sm font-bold text-[#111418] dark:text-white">
+                                                    Nhấp để tải ảnh
+                                                </p>
+                                                <p class="text-xs text-[#617589]">PNG, JPG ≤ 2MB</p>
+                                            </div>
+
+                                            <!-- IMPORTANT -->
+                                            <input id="categoryImage" type="file" accept="image/*"
+                                                class="absolute inset-0 opacity-0 cursor-pointer" />
+                                        </div>
+                                    </div>
+
+                                    <!-- Preview -->
+                                    <div
+                                        class="border border-[#f0f2f4] dark:border-gray-800 rounded-xl p-4 bg-background-light/30 dark:bg-gray-800/20">
+                                        <p class="text-xs font-bold text-[#617589] uppercase tracking-wider mb-3">
+                                            Xem trước
+                                        </p>
+
+                                        <div
+                                            class="aspect-video w-full rounded-lg bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                                            <img id="imagePreview" class="w-full h-full object-cover hidden"
+                                                alt="Category preview" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </section>
+
+                            <!-- ================= ACTION ================= -->
+                            <div
+                                class="flex items-center justify-end gap-3 pt-4 border-t border-[#f0f2f4] dark:border-gray-800">
+
+                                <button type="reset"
+                                    class="px-6 py-3 rounded-lg text-sm font-bold text-[#617589] hover:bg-[#f0f2f4] dark:hover:bg-gray-800">
+                                    Hủy bỏ
+                                </button>
+
+                                <button type="submit"
+                                    class="px-8 py-3 rounded-lg text-sm font-bold text-white bg-primary hover:bg-primary/90 shadow-md shadow-primary/20 flex items-center gap-2"
+                                    type="button">
+                                    <span>Thêm danh mục</span>
+                                    <span class="material-symbols-outlined text-sm">add_circle</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Helpful Tips -->
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div
+                        class="p-4 rounded-xl bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 flex gap-3">
+                        <span class="material-symbols-outlined text-blue-600">lightbulb</span>
+                        <div>
+                            <p class="text-xs font-bold text-blue-900 dark:text-blue-300 mb-1">Mẹo nhỏ</p>
+                            <p class="text-[11px] text-blue-700 dark:text-blue-400">Sử dụng ảnh có nền trắng hoặc trung
+                                tính để danh mục trông chuyên nghiệp hơn.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-4 rounded-xl bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800 flex gap-3">
+                        <span class="material-symbols-outlined text-amber-600">Bed</span>
+                        <div>
+                            <p class="text-xs font-bold text-amber-900 dark:text-amber-300 mb-1">SEO Friendly</p>
+                            <p class="text-[11px] text-amber-700 dark:text-amber-400">Tên danh mục rõ ràng giúp Google
+                                tìm thấy sản phẩm của bạn dễ hơn.</p>
+                        </div>
+                    </div>
+                    <div
+                        class="p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 border border-purple-100 dark:border-purple-800 flex gap-3">
+                        <span class="material-symbols-outlined text-purple-600">visibility</span>
+                        <div>
+                            <p class="text-xs font-bold text-purple-900 dark:text-purple-300 mb-1">Hiển thị</p>
+                            <p class="text-[11px] text-purple-700 dark:text-purple-400">Danh mục sẽ xuất hiện ngay lập
+                                tức trên trang chủ sau khi thêm.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Success Toast (Hidden by default, shown conceptually) -->
+    <div
+        class="fixed bottom-8 right-8 bg-green-600 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 transform translate-y-24 transition-transform invisible">
+        <span class="material-symbols-outlined">check_circle</span>
+        <p class="font-bold text-sm">Danh mục đã được thêm thành công!</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/category-create.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Giỏ hàng - ElectroShop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white flex flex-col min-h-screen overflow-x-hidden">
+    <!-- Top Navigation -->
+    <header
+        class="sticky top-0 z-50 bg-white dark:bg-[#1a2632] border-b border-[#f0f2f4] dark:border-[#2a3b4d] px-4 lg:px-10 py-3 shadow-sm">
+        <div class="max-w-7xl mx-auto w-full flex items-center justify-between whitespace-nowrap">
+            <div class="flex items-center gap-2 cursor-pointer">
+                <a href="/index.html" class="flex items-center gap-2">
+                <div class="size-8 text-primary flex items-center justify-center">
+                    <span class="material-symbols-outlined text-3xl">bolt</span>
+                </div>
+                <h2 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight">
+                    Điện Máy Xanh</h2>
+                </a>
+            </div>
+            <div class="flex flex-1 justify-end gap-4 lg:gap-8 items-center">
+
+                <div class="flex gap-3 items-center">
+                    <div class="flex items-center gap-2">
+                        <button id="loginBtn" onclick="goToLogin()"
+                            class="h-10 px-4 hidden items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-bold">
+                            Đăng nhập
+                        </button>
+                    </div>
+
+                    <div id="userInfo" class="hidden items-center gap-3">
+                        <span id="username" class="font-semibold"></span>
+                        <button onclick="logout()"
+                            class="h-10 px-4 rounded-lg border border-gray-200 hover:bg-gray-100 text-sm font-bold">
+                            Đăng xuất
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow w-full max-w-7xl mx-auto px-4 lg:px-10 py-6 lg:py-10">
+        <!-- Breadcrumbs -->
+        <div class="flex gap-2 items-center text-sm text-[#617589] dark:text-[#9aaebd] mb-6">
+            <a class="hover:text-primary" href="#">Trang chủ</a>
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+            <span class="text-[#111418] dark:text-white font-medium">Giỏ hàng</span>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Left Column: Cart Items -->
+            <div class="lg:col-span-8 flex flex-col gap-6">
+                <!-- Heading -->
+                <div
+                    class="flex flex-wrap justify-between items-end gap-3 pb-2 border-b border-[#f0f2f4] dark:border-[#2a3b4d]">
+                    <div class="flex flex-col gap-1">
+                        <h1
+                            class="text-[#111418] dark:text-white text-3xl font-extrabold leading-tight tracking-[-0.02em]">
+                            Giỏ hàng của bạn</h1>
+                        <p class="text-[#617589] dark:text-[#9aaebd] text-base font-normal">Bạn có 0 sản phẩm trong giỏ
+                            hàng</p>
+                    </div>
+                </div>
+                <!-- Cart List -->
+                <div class="flex flex-col gap-4">
+
+                </div>
+                <!-- Cross Sell / Related (Simple Row) -->
+
+            </div>
+            <!-- Right Column: Order Summary (Sticky) -->
+            <div class="lg:col-span-4 sticky top-24">
+                <div
+                    class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-[#f0f2f4] dark:border-[#2a3b4d] overflow-hidden">
+                    <div class="p-6 flex flex-col gap-6">
+                        <h2 class="text-xl font-bold text-[#111418] dark:text-white">Thông tin đơn hàng</h2>
+                        <!-- Coupon Input -->
+                        <div class="flex gap-2">
+                            <input
+                                class="flex-1 rounded-lg bg-[#f0f2f4] dark:bg-[#2a3b4d] border-none text-sm px-4 py-2.5 focus:ring-2 focus:ring-primary/50 text-[#111418] dark:text-white dark:placeholder-[#9aaebd]"
+                                placeholder="Mã giảm giá" type="text" />
+                            <button
+                                class="bg-[#f0f2f4] dark:bg-[#2a3b4d] text-[#111418] dark:text-white px-4 py-2.5 rounded-lg text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Áp
+                                dụng</button>
+                        </div>
+                        <!-- Calculations -->
+                        <div class="flex flex-col gap-3 text-sm border-t border-[#f0f2f4] dark:border-[#2a3b4d] pt-4">
+
+                            <div class="flex justify-between items-center text-[#617589] dark:text-[#9aaebd]">
+                                <span>Giảm giá</span>
+                                <span class="text-green-600 font-medium">-0₫</span>
+                            </div>
+                            <div class="flex justify-between items-center text-[#617589] dark:text-[#9aaebd]">
+                                <span>Phí vận chuyển</span>
+                                <span class="text-[#111418] dark:text-white font-medium">Miễn phí</span>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div
+                            class="flex justify-between items-center border-t border-[#f0f2f4] dark:border-[#2a3b4d] pt-4">
+                            <div class="flex flex-col">
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Tổng cộng</span>
+                                <span class="text-xs text-[#617589] dark:text-[#9aaebd]">(Đã bao gồm VAT)</span>
+                            </div>
+                            <span class="text-primary text-2xl font-black">10.940.000₫</span>
+                        </div>
+                        <!-- CTA Button -->
+                        <button id="goCheckoutBtn"
+                            class="w-full bg-primary hover:bg-blue-600 text-white rounded-lg py-3.5 px-4 font-bold text-base shadow-lg shadow-blue-500/30 transition-all active:scale-[0.98]">
+                            Tiến hành thanh toán
+                        </button>
+                        <!-- Trust Signals -->
+                        <div
+                            class="flex justify-center gap-4 pt-2 opacity-60 grayscale hover:grayscale-0 transition-all">
+                            <div class="h-6 w-10 bg-contain bg-no-repeat bg-center" data-alt="Visa logo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuACfvq0Txi1FKbDNV0fgg4y9OlqqDe4imA5td4lcuVeP7bjO6if4eAVGq2u_ZoDCkNxF7LlJjWcuOS89YhEMy8Y_zSePEANv-V7gnfaOXDvVq-imISvTJ6ONq3AcLpsN7S-a366ezFmgfcbksRRXeilrZr9MxDO1uINPdpcMVOcYIBzHGnEKMykIE-eYYiogovBk9nWuDBvkA_ycpYz9DCGfd2QOOXJgXjCCvXhIBIfCfr4H1XuI-O0vaV6LJFqdw4C9-mq5yiYIzeO");'>
+                            </div>
+                            <div class="h-6 w-10 bg-contain bg-no-repeat bg-center" data-alt="Mastercard logo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBZay2dk2m9lc1kjq-Q9wxDqe3dFBC9oyJXNa0VLKG5ynhDeoteaRbom0LLRJHpoSqOsFzYh_e7P5VjzvpWTrThdsXlC1HaX06dC38s458mOY0e9MzGyeChaLhht_3zwM3tEdroyfbggm3hxZ77PVlajTzpTxu6398Mre8s8t2HiF7W8tI1rrMoQCll0OI98YeWHzH_fsmkNxX3FrKlcvaWRgHghU-asHn61wKD-crmQBFZ0Lp4eGmq3FbC25a25_gKKETDhGVwQaSJ");'>
+                            </div>
+                            <div class="h-6 w-10 bg-contain bg-no-repeat bg-center" data-alt="MoMo wallet logo"
+                                style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3KYXAFE_PjLWQVcraLUl1dr8HsMDap9MvBI_p3agXTenGLF7aGgVcKdc0VnFslfE6qfZtsAxxqjMWERHjGdLRzgy8eCQ9NX8TjWYAJShAL5AgErsX8SLNLPvlwmYHCw5c4MiV8FoKvy7Eac2jRTLjrYk55Jvyca0hOK97X6syPcr1mKYG-fCuRxXZdkgd2tl6SralC2rG4cGvvHksCNbyN-Yx0kjnVb9VZQ2zlm1dfsbGrxDok8naE3yXe4ZzHz47hrj6UD6BPUO_");'>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Simple Footer Section -->
+    <footer class="mt-auto border-t border-[#f0f2f4] dark:border-[#2a3b4d] bg-white dark:bg-[#1a2632] py-8 px-10">
+        <div
+            class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-[#617589] dark:text-[#9aaebd]">
+            <p class="text-sm">© 2024 ElectroShop. All rights reserved.</p>
+            <div class="flex gap-6 text-sm">
+                <a class="hover:text-primary" href="#">Chính sách bảo mật</a>
+                <a class="hover:text-primary" href="#">Điều khoản sử dụng</a>
+                <a class="hover:text-primary" href="#">Hỗ trợ</a>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/auth.js"></script>
+    <script src="/js/authFetch.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>

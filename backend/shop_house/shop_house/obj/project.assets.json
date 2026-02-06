@@ -3296,11 +3296,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos c#\\shop_house\\shop_house\\shop_house.csproj",
+      "projectUniqueName": "C:\\Users\\nhana\\Home-appliance-shop\\backend\\shop_house\\shop_house\\shop_house.csproj",
       "projectName": "shop_house",
-      "projectPath": "D:\\repos c#\\shop_house\\shop_house\\shop_house.csproj",
+      "projectPath": "C:\\Users\\nhana\\Home-appliance-shop\\backend\\shop_house\\shop_house\\shop_house.csproj",
       "packagesPath": "C:\\Users\\nhana\\.nuget\\packages\\",
-      "outputPath": "D:\\repos c#\\shop_house\\shop_house\\obj\\",
+      "outputPath": "C:\\Users\\nhana\\Home-appliance-shop\\backend\\shop_house\\shop_house\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

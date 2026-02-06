@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Gia Dụng Việt - Checkout</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Configuration -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .dark ::-webkit-scrollbar-thumb {
+            background-color: #475569;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white flex flex-col min-h-screen overflow-x-hidden">
+    <!-- Top Navigation Bar -->
+    <header class="sticky top-0 z-50 bg-white dark:bg-[#1a2632] border-b border-gray-200 dark:border-gray-800">
+        <div class="layout-container flex flex-col justify-center">
+            <div class="px-4 md:px-10 lg:px-40 py-3">
+                <div class="flex items-center justify-between gap-4">
+                    <!-- Logo -->
+                    <a href="/index.html" class="block">
+                        <div class="flex items-center gap-2 cursor-pointer">
+                            <div class="size-8 text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">bolt</span>
+                            </div>
+                            <h2 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight">
+                                Điện Máy Xanh
+                            </h2>
+                        </div>
+                    </a>
+                    <!-- Actions -->
+                    <div class="flex items-center gap-4">
+                        <!-- Mobile Search Icon -->
+                        <button
+                            class="md:hidden flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                            <span class="material-symbols-outlined">search</span>
+                        </button>
+                        <!-- User Actions -->
+                        <div class="flex items-center gap-2">
+                            <button id="loginBtn" onclick="goToLogin()"
+                                class="h-10 px-4 hidden items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-bold">
+                                Đăng nhập
+                            </button>
+                        </div>
+
+                        <div id="userInfo" class="hidden items-center gap-3">
+                            <span id="username" class="font-semibold"></span>
+                            <button onclick="logout()"
+                                class="h-10 px-4 rounded-lg border border-gray-200 hover:bg-gray-100 text-sm font-bold">
+                                Đăng xuất
+                            </button>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a href="Cart/Cart.html"
+                                class="relative flex items-center justify-center size-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-[#111418] dark:text-white transition-colors">
+                                <span class="material-symbols-outlined">shopping_cart</span>
+                                <span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow layout-container flex justify-center py-5 md:py-8 w-full">
+        <div class="layout-content-container flex flex-col w-full max-w-[1280px] px-4 md:px-10">
+            <!-- Breadcrumbs -->
+            <div class="flex flex-wrap gap-2 px-0 pb-4">
+                <a class="text-[#617589] dark:text-gray-400 text-sm md:text-base font-medium leading-normal hover:text-primary transition-colors"
+                    href="#">Giỏ hàng</a>
+                <span class="text-[#617589] dark:text-gray-400 text-sm md:text-base font-medium leading-normal">/</span>
+                <span class="text-[#111418] dark:text-white text-sm md:text-base font-bold leading-normal">Thanh
+                    toán</span>
+                <span class="text-[#617589] dark:text-gray-400 text-sm md:text-base font-medium leading-normal">/</span>
+                <span class="text-[#dbe0e6] dark:text-gray-600 text-sm md:text-base font-medium leading-normal">Hoàn
+                    tất</span>
+            </div>
+            <!-- Page Title -->
+            <h1
+                class="text-[#111418] dark:text-white tracking-light text-[28px] md:text-[32px] font-bold leading-tight px-0 pb-6">
+                Thanh toán</h1>
+            <div class="flex flex-col lg:flex-row gap-8">
+                <!-- LEFT COLUMN: Forms -->
+                <div class="flex-1 flex flex-col gap-6">
+                    <!-- Section 1: Shipping Info -->
+                    <div
+                        class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-gray-800 p-6">
+                        <div class="flex items-center gap-3 pb-6 border-b border-[#f0f2f4] dark:border-gray-700 mb-6">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white font-bold text-sm">1</span>
+                            <h2
+                                class="text-[#111418] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em]">
+                                Thông tin giao hàng</h2>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Họ và tên</p>
+                                <input id="fullName"
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dbe0e6] dark:border-gray-700 bg-white focus:border-primary h-12 placeholder:text-[#9aa2ac] p-4 text-base font-normal leading-normal transition-all"
+                                    placeholder="Nguyễn Văn A" />
+                            </label>
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Số điện thoại</p>
+                                <input id="phone"
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dbe0e6] dark:border-gray-700 bg-white focus:border-primary h-12 placeholder:text-[#9aa2ac] p-4 text-base font-normal leading-normal transition-all"
+                                    placeholder="09xx xxx xxx" />
+                            </label>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Địa chỉ nhận hàng</p>
+                                <input id="address"
+                                    class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] focus:outline-0 focus:ring-2 focus:ring-primary/20 border border-[#dbe0e6] dark:border-gray-700 bg-white focus:border-primary h-12 placeholder:text-[#9aa2ac] p-4 text-base font-normal leading-normal transition-all"
+                                    placeholder="Số nhà, tên đường" />
+                            </label>
+                        </div>
+                        <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Tỉnh / Thành phố</p>
+                                <div class="relative">
+                                    <select
+                                        class="form-select w-full appearance-none rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] border border-[#dbe0e6] dark:border-gray-700 bg-white h-12 px-4 text-base focus:border-primary focus:ring-0">
+                                        <option>Hà Nội</option>
+                                        <option>TP. Hồ Chí Minh</option>
+                                        <option>Đà Nẵng</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-4 top-3 text-gray-500 pointer-events-none">expand_more</span>
+                                </div>
+                            </label>
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Quận / Huyện</p>
+                                <div class="relative">
+                                    <select
+                                        class="form-select w-full appearance-none rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] border border-[#dbe0e6] dark:border-gray-700 bg-white h-12 px-4 text-base focus:border-primary focus:ring-0">
+                                        <option>Chọn Quận/Huyện</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-4 top-3 text-gray-500 pointer-events-none">expand_more</span>
+                                </div>
+                            </label>
+                            <label class="flex flex-col flex-1">
+                                <p class="text-[#111418] dark:text-gray-200 text-sm font-semibold leading-normal pb-2">
+                                    Phường / Xã</p>
+                                <div class="relative">
+                                    <select
+                                        class="form-select w-full appearance-none rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] border border-[#dbe0e6] dark:border-gray-700 bg-white h-12 px-4 text-base focus:border-primary focus:ring-0">
+                                        <option>Chọn Phường/Xã</option>
+                                    </select>
+                                    <span
+                                        class="material-symbols-outlined absolute right-4 top-3 text-gray-500 pointer-events-none">expand_more</span>
+                                </div>
+                            </label>
+                        </div> -->
+                    </div>
+                    <!-- Section 2: Payment Method -->
+                    <div
+                        class="bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-gray-800 p-6">
+                        <div class="flex items-center gap-3 pb-6 border-b border-[#f0f2f4] dark:border-gray-700 mb-6">
+                            <span
+                                class="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white font-bold text-sm">2</span>
+                            <h2
+                                class="text-[#111418] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em]">
+                                Phương thức thanh toán</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Option 1: COD -->
+                            <label
+                                class="relative flex items-center p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer transition-all hover:bg-primary/5">
+                                <div class="flex items-center h-5">
+                                    <input checked class="h-5 w-5 text-primary border-gray-300 focus:ring-primary"
+                                        name="payment" type="radio" value="COD" />
+                                </div>
+                                <div class="ml-4 flex items-center flex-1">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 rounded-lg bg-white dark:bg-gray-800 text-primary mr-4 shadow-sm">
+                                        <span class="material-symbols-outlined">local_shipping</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="block text-sm font-bold text-[#111418] dark:text-white">Thanh toán
+                                            khi nhận hàng (COD)</span>
+                                        <span class="block text-xs text-[#617589] dark:text-gray-400">Thanh toán bằng
+                                            tiền mặt khi giao hàng</span>
+                                    </div>
+                                </div>
+                            </label>
+                            <!-- Option 2: Credit Card -->
+                            <label
+                                class="relative flex items-center p-4 rounded-xl border border-[#dbe0e6] dark:border-gray-700 hover:border-primary/50 cursor-pointer transition-all">
+                                <div class="flex items-center h-5">
+                                    <input class="h-5 w-5 text-primary border-gray-300 focus:ring-primary"
+                                        name="payment" type="radio" />
+                                </div>
+                                <div class="ml-4 flex items-center flex-1">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 rounded-lg bg-white dark:bg-gray-800 text-[#111418] dark:text-gray-300 mr-4 shadow-sm border border-gray-100 dark:border-gray-700">
+                                        <span class="material-symbols-outlined">credit_card</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="block text-sm font-bold text-[#111418] dark:text-white">Thẻ tín
+                                            dụng / Ghi nợ</span>
+                                        <span class="block text-xs text-[#617589] dark:text-gray-400">Visa, Mastercard,
+                                            JCB, AMEX</span>
+                                    </div>
+                                </div>
+                                <div class="hidden sm:flex gap-2">
+                                    <div class="h-6 w-10 bg-gray-200 dark:bg-gray-700 rounded bg-[url('https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png')] bg-cover bg-center"
+                                        data-alt="visa icon"></div>
+                                </div>
+                            </label>
+                            <!-- Option 3: E-Wallet -->
+                            <label
+                                class="relative flex items-center p-4 rounded-xl border border-[#dbe0e6] dark:border-gray-700 hover:border-primary/50 cursor-pointer transition-all">
+                                <div class="flex items-center h-5">
+                                    <input class="h-5 w-5 text-primary border-gray-300 focus:ring-primary"
+                                        name="payment" type="radio" />
+                                </div>
+                                <div class="ml-4 flex items-center flex-1">
+                                    <div
+                                        class="flex items-center justify-center h-10 w-10 rounded-lg bg-white dark:bg-gray-800 text-[#111418] dark:text-gray-300 mr-4 shadow-sm border border-gray-100 dark:border-gray-700">
+                                        <span class="material-symbols-outlined">account_balance_wallet</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="block text-sm font-bold text-[#111418] dark:text-white">Ví điện
+                                            tử</span>
+                                        <span class="block text-xs text-[#617589] dark:text-gray-400">Momo, ZaloPay,
+                                            ShopeePay</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <!-- RIGHT COLUMN: Order Summary -->
+                <div class="w-full lg:w-[380px] flex-shrink-0">
+                    <div
+                        class="sticky top-24 bg-white dark:bg-[#1a2632] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-gray-800 p-6">
+                        <h2
+                            class="text-[#111418] dark:text-white text-[20px] font-bold leading-tight tracking-[-0.015em] mb-5">
+                            Đơn hàng</h2>
+                        <!-- Product List -->
+                        <div id="orderItems" class="flex flex-col gap-4 max-h-[300px] overflow-y-auto pr-2 mb-6">
+
+                        </div>
+                        <!-- Discount Code -->
+                        <div class="flex gap-2 mb-6">
+                            <input
+                                class="form-input flex w-full min-w-0 flex-1 rounded-lg text-[#111418] dark:text-white dark:bg-[#101922] border border-[#dbe0e6] dark:border-gray-700 h-10 px-3 text-sm focus:border-primary focus:ring-0"
+                                placeholder="Mã giảm giá" value="" />
+                            <button
+                                class="h-10 px-4 rounded-lg bg-gray-100 dark:bg-gray-800 text-[#111418] dark:text-white text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">Áp
+                                dụng</button>
+                        </div>
+                        <!-- Price Breakdown -->
+                        <div class="border-t border-dashed border-[#dbe0e6] dark:border-gray-700 pt-4 space-y-3">
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-[#617589] dark:text-gray-400">Tạm tính</span>
+                                <span id="subTotal" class="font-semibold text-[#111418] dark:text-white">0₫</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-[#617589] dark:text-gray-400">Phí vận chuyển</span>
+                                <span id="shippingFee" class="font-semibold text-[#111418] dark:text-white">₫</span>
+                            </div>
+                            <div class="flex justify-between items-center text-sm">
+                                <span class="text-[#617589] dark:text-gray-400">Giảm giá</span>
+                                <span id="discount" class="font-semibold text-green-600">-0₫</span>
+                            </div>
+                            <div
+                                class="flex justify-between items-center pt-3 mt-3 border-t border-[#f0f2f4] dark:border-gray-700">
+                                <span class="text-base font-bold text-[#111418] dark:text-white">Tổng cộng</span>
+                                <span id="totalAmount" class="text-xl font-extrabold text-primary">0₫</span>
+                            </div>
+                            <p class="text-right text-xs text-[#617589] dark:text-gray-500">(Đã bao gồm VAT)</p>
+                        </div>
+                        <!-- CTA Button -->
+                        <button id="checkoutBtn"
+                            class="w-full mt-6 flex items-center justify-center rounded-lg h-12 bg-primary text-white gap-2 text-base font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/30">
+                            Hoàn tất đơn hàng
+                        </button>
+                        <div class="mt-4 flex justify-center gap-2">
+                            <span class="material-symbols-outlined text-gray-400" data-alt="secure payment icon"
+                                style="font-size: 24px;">verified_user</span>
+                            <span class="text-xs text-gray-500 text-center">Thông tin của bạn được bảo mật tuyệt
+                                đối</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Links -->
+            <div class="flex justify-center gap-6 mt-12 py-6 border-t border-[#f0f2f4] dark:border-gray-800">
+                <a class="text-sm text-[#617589] dark:text-gray-500 hover:text-primary transition-colors" href="#">Điều
+                    khoản dịch vụ</a>
+                <a class="text-sm text-[#617589] dark:text-gray-500 hover:text-primary transition-colors" href="#">Chính
+                    sách hoàn trả</a>
+                <a class="text-sm text-[#617589] dark:text-gray-500 hover:text-primary transition-colors" href="#">Hỗ
+                    trợ khách hàng</a>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/authFetch.js"></script>
+    <script src="../js/cart.js"></script>
+    <script src="../js/checkout.js"></script>
+
+</body>
+
+</html>

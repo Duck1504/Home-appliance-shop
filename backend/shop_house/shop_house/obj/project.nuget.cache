@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Txp+ZXY6EQ0=",
+  "dgSpecHash": "axV8koGTgpE=",
   "success": true,
-  "projectFilePath": "D:\\repos c#\\shop_house\\shop_house\\shop_house.csproj",
+  "projectFilePath": "C:\\Users\\nhana\\Home-appliance-shop\\backend\\shop_house\\shop_house\\shop_house.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\nhana\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\nhana\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

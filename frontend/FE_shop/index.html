@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Điện Máy Xanh - Trang chủ</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        /* Custom scrollbar for horizontal scrolling if needed */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white">
+    <div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Header / Navbar -->
+        <header class="sticky top-0 z-50 bg-white dark:bg-[#1a2632] border-b border-gray-200 dark:border-gray-800">
+            <div class="layout-container flex flex-col justify-center">
+                <div class="px-4 md:px-10 lg:px-40 py-3">
+                    <div class="flex items-center justify-between gap-4">
+                        <!-- Logo -->
+                        <div class="flex items-center gap-2 cursor-pointer">
+                            <div class="size-8 text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">bolt</span>
+                            </div>
+                            <h2 class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight">
+                                Điện Máy Xanh</h2>
+                        </div>
+                        <!-- Search Bar (Hidden on mobile, visible on tablet+) -->
+                        <div class="hidden md:flex flex-1 max-w-[600px] mx-8">
+                            <label
+                                class="flex w-full items-center h-10 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 overflow-hidden group focus-within:ring-2 ring-primary/50 transition-all">
+                                <div
+                                    class="pl-4 pr-2 text-[#617589] dark:text-gray-400 flex items-center justify-center">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="w-full bg-transparent border-none text-sm text-[#111418] dark:text-white placeholder:text-[#617589] focus:ring-0 h-full"
+                                    placeholder="Bạn tìm gì hôm nay? (Tivi, Tủ lạnh, Máy giặt...)" />
+                                <button
+                                    class="h-full px-4 bg-primary text-white font-bold text-sm hover:bg-blue-600 transition-colors">
+                                    Tìm kiếm
+                                </button>
+                            </label>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center gap-4">
+                            <!-- Mobile Search Icon -->
+                            <button
+                                class="md:hidden flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <span class="material-symbols-outlined">search</span>
+                            </button>
+                            <!-- User Actions -->
+                            <div class="flex items-center gap-2">
+                                <button id="loginBtn" onclick="goToLogin()"
+                                    class="h-10 px-4 hidden items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-bold">
+                                    Đăng nhập
+                                </button>
+                            </div>
+
+                            <div id="userInfo" class="hidden items-center gap-3">
+                                <span id="username" class="font-semibold"></span>
+                                <button onclick="logout()"
+                                    class="h-10 px-4 rounded-lg border border-gray-200 hover:bg-gray-100 text-sm font-bold">
+                                    Đăng xuất
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="Cart/Cart.html"
+                                    class="relative flex items-center justify-center size-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-[#111418] dark:text-white transition-colors">
+                                    <span class="material-symbols-outlined">shopping_cart</span>
+                                    <span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Bottom Nav (Categories) -->
+                    <nav
+                        class="hidden md:flex items-center gap-8 mt-4 pt-2 border-t border-gray-100 dark:border-gray-800 overflow-x-auto">
+                        <a class="text-[#111418] dark:text-gray-300 hover:text-primary text-sm font-bold whitespace-nowrap"
+                            href="index.html">Trang chủ</a>
+                        <a id="adminLink"
+                            class="text-red-500 font-bold text-sm whitespace-nowrap flex items-center gap-1 hidden"
+                            href="../Admin/product_list_admin.html">
+                            <span class="material-symbols-outlined text-[18px]">local_fire_department</span>
+                            Trang admin
+                        </a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Main Content -->
+        <main class="flex flex-col items-center w-full">
+            <div class="layout-content-container flex flex-col max-w-[1200px] w-full px-4 md:px-10 py-6 gap-8">
+                <!-- Hero Section -->
+                <div class="rounded-xl overflow-hidden relative group w-full min-h-[300px] md:min-h-[400px] flex items-center bg-cover bg-center"
+                    data-alt="Modern minimalist living room with smart home appliances"
+                    style='background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.1) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsbdttxq0DChDI7rbl5p13h1Kb4k5q0s98qgn5xvYoUIQc4KCqkIND0_tyzxel0YD6_229liki9kFWY4TFBcJPhqrgjiu3fSy1pO7TIszEuNhKPHK7YKGpfldLXyXnqZipvmGyhvts8iMmFg-tuxCJy_JUDwnmcp6lor9D5hejqTyilsQh-8SDBtEvHHllN-Qr_75rPR_gL_nZGFu0TRyyN-b2tD6ax_iJNaPpreou2M3rlEoPcucF3q_0IsaGPnkHjpOxH_gtRyuM");'>
+                    <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/20 to-transparent"></div>
+                    <div class="relative z-10 p-8 md:p-16 flex flex-col gap-4 max-w-2xl">
+                        <span
+                            class="inline-block px-3 py-1 bg-red-600 text-white text-xs font-bold uppercase tracking-wider rounded-full w-fit">Summer
+                            Sale</span>
+                        <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight">
+                            Lễ hội điện máy <br />
+                            <span class="text-primary-300 text-blue-400">Giảm sốc 50%</span>
+                        </h1>
+                        <p class="text-gray-200 text-base md:text-lg font-medium max-w-lg">
+                            Cập nhật không gian sống với công nghệ mới nhất. Miễn phí lắp đặt và bảo hành chính hãng.
+                        </p>
+                    </div>
+                </div>
+                <!-- Trust Signals -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 py-4 border-b border-gray-100 dark:border-gray-800">
+                    <div
+                        class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div
+                            class="size-10 rounded-full bg-blue-50 dark:bg-blue-900/30 text-primary flex items-center justify-center">
+                            <span class="material-symbols-outlined">local_shipping</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold dark:text-white">Miễn phí vận chuyển</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Đơn từ 500k</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div
+                            class="size-10 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 flex items-center justify-center">
+                            <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold dark:text-white">Bảo hành chính hãng</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">100% chính hãng</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div
+                            class="size-10 rounded-full bg-orange-50 dark:bg-orange-900/30 text-orange-600 flex items-center justify-center">
+                            <span class="material-symbols-outlined">published_with_changes</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold dark:text-white">Đổi trả 30 ngày</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Lỗi là đổi mới</span>
+                        </div>
+                    </div>
+                    <div
+                        class="flex items-center gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
+                        <div
+                            class="size-10 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 flex items-center justify-center">
+                            <span class="material-symbols-outlined">support_agent</span>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-sm font-bold dark:text-white">Hỗ trợ 24/7</span>
+                            <span class="text-xs text-gray-500 dark:text-gray-400">Hotline: 1900 1234</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories -->
+                <div class="flex flex-col gap-4">
+                    <div class="flex items-center justify-between">
+                        <h2 class="text-2xl font-bold text-[#111418] dark:text-white">Danh mục nổi bật</h2>
+                        <a class="text-primary text-sm font-bold hover:underline" href="#">Xem tất cả</a>
+                    </div>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4" id="categoryList">
+
+                    </div>
+                </div>
+                <!-- Best Sellers / Product Grid -->
+                <div class="flex flex-col gap-4 mt-4">
+                    <div class="flex items-center justify-between">
+                        <div class="flex flex-col gap-1">
+                            <h2 class="text-2xl font-bold text-[#111418] dark:text-white flex items-center gap-2">
+                                <span class="material-symbols-outlined text-red-500 fill-current">bolt</span>
+                                Sản phẩm bán chạy
+                            </h2>
+                            <p class="text-sm text-gray-500 dark:text-gray-400">Nhiều ưu đãi hấp dẫn đang chờ bạn</p>
+                        </div>
+                        <div class="flex gap-2">
+                            <button
+                                class="size-8 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <span class="material-symbols-outlined text-sm">arrow_back</span>
+                            </button>
+                            <button
+                                class="size-8 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-50 dark:hover:bg-gray-800">
+                                <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                        <!-- Product Card 1 -->
+                        <div
+                            class="flex flex-col gap-3 bg-white dark:bg-[#1a2632] p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                                -25%</div>
+                            <div
+                                class="w-full aspect-square rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 mb-2">
+                                <img alt="Silver Samsung washing machine front view"
+                                    class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuB75jrveEA3SSWA10Docu-l5CFtWrqPN_wfTLuiB4-84yvu3xoQg29xtawbjl3WG7FoIbDNPJFvCvYyj7bqz6wd1h1ur00NXUkgOf62cDcjqw9o2jS08NXn3VxwfBpcWOtjs7DvFxUHDkf06TvdXJGiwzF99gNeentt-A_E-LAAOGnHSHtL75HP4cSLuuNZ-q7vIBIIvnPmFWFD0iJpMk9qcaih39mAjyc38OQ7PPMtTH40e3LbW7f5MvEvUNDM-SHdQxYO7YJTDcvs" />
+                            </div>
+                            <div class="flex flex-col flex-1">
+                                <h3
+                                    class="text-[#111418] dark:text-white font-medium text-base line-clamp-2 min-h-[3rem]">
+                                    Máy giặt Samsung Inverter 9kg WW90T634DLE</h3>
+                                <div class="flex items-end gap-2 mt-2">
+                                    <span class="text-primary text-lg font-bold">8.490.000₫</span>
+                                    <span class="text-gray-400 text-sm line-through mb-1">11.290.000₫</span>
+                                </div>
+                                <div class="flex items-center gap-1 mt-2">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span
+                                            class="material-symbols-outlined text-[16px] fill-current">star_half</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">(128)</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-2 h-10 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 lg:opacity-100">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                        <!-- Product Card 2 -->
+                        <div
+                            class="flex flex-col gap-3 bg-white dark:bg-[#1a2632] p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+                                -15%</div>
+                            <div
+                                class="w-full aspect-square rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 mb-2">
+                                <img alt="Black double door side by side refrigerator"
+                                    class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeipq_yjwY2b-eAfJD1W-SPVdJWxpmnubiqVud5c_2tT72ZRUyvQ6dIXwOYAOhVlmcjX1qKH6t1MQXAdbefnMMg4NGd1XgB6HGdrJhFcMbDtcg2Oi6Wa3j28K2bO7IS9Yw6tbO27TyohWEDSN1cIBN7-U15E1T44gN1fdlmZaxfZVxP_8q_uwIyub6ieADevm0angV4NR9pOS6psiJopVETogs2KP5InHkTG5D92p8o6aePO_Vv5MkyOmezHbManDs1poyErfQvABX" />
+                            </div>
+                            <div class="flex flex-col flex-1">
+                                <h3
+                                    class="text-[#111418] dark:text-white font-medium text-base line-clamp-2 min-h-[3rem]">
+                                    Tủ lạnh LG Inverter 613 lít GR-B247JDS</h3>
+                                <div class="flex items-end gap-2 mt-2">
+                                    <span class="text-primary text-lg font-bold">15.990.000₫</span>
+                                    <span class="text-gray-400 text-sm line-through mb-1">18.500.000₫</span>
+                                </div>
+                                <div class="flex items-center gap-1 mt-2">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">(85)</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-2 h-10 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 lg:opacity-100">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                        <!-- Product Card 3 -->
+                        <div
+                            class="flex flex-col gap-3 bg-white dark:bg-[#1a2632] p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group relative">
+                            <div
+                                class="w-full aspect-square rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 mb-2">
+                                <img alt="Slim bezel 4K smart television on stand"
+                                    class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0PDz-eqtEY5-rIHrmQzZVQn6Ui80fWHZ8fPAe44xW9nPqJac5X9kjN89VwGpXG5da3mRPP5LKcS5c7OOnDVzgyjM9mE2sWsVhRBlMQ4Bsa7hoaS_cMuouLJmULdFO85JfiNehivZUnUxAZ4LCTQW-MYsFpN0E2mJY8_bDArFvF0-Hs4K3clwWR93xQqeZ1rf63A-5SuA5RxkcDRZYIpgJlpDRMXjjiWcW_o_gkSJ-IGBNoj6-46oYBr3SrM4cuiG57KCCfZIey3mq" />
+                            </div>
+                            <div class="flex flex-col flex-1">
+                                <h3
+                                    class="text-[#111418] dark:text-white font-medium text-base line-clamp-2 min-h-[3rem]">
+                                    Smart Tivi Sony 4K 55 inch KD-55X80K</h3>
+                                <div class="flex items-end gap-2 mt-2">
+                                    <span class="text-primary text-lg font-bold">13.400.000₫</span>
+                                </div>
+                                <div class="flex items-center gap-1 mt-2">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] text-gray-300">star</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">(42)</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-2 h-10 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 lg:opacity-100">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                        <!-- Product Card 4 -->
+                        <div
+                            class="flex flex-col gap-3 bg-white dark:bg-[#1a2632] p-4 rounded-xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-shadow group relative">
+                            <div
+                                class="absolute top-4 left-4 z-10 bg-blue-500 text-white text-xs font-bold px-2 py-1 rounded">
+                                Mới</div>
+                            <div
+                                class="w-full aspect-square rounded-lg overflow-hidden bg-gray-50 dark:bg-gray-800 mb-2">
+                                <img alt="Modern tablet computer with stylus pen"
+                                    class="w-full h-full object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIx8WJJN0WY9ehakiEtY0GV9EMDb409TC6lKSSXAu4Qs2l_6ebLVk2dwYUIlnDkouKY9QsiHaP2m9EUFRwLgjVWYRaXs1dr0CXpdgbWQFh7-MoPS_jKZ-rOI8kJ1U68UMJeRz_kmvtKRHVlM20Hv4lK7demV7pSqfnsxLBu75BA59qH95waTzLKlC-6_174IyDgqHUDPYzw_A3UPRs2MwP8JkJj292ukKLxgnu1P0ULe-uIYiOzK08ExI5xO87AVzUGxSU35AtbHGU" />
+                            </div>
+                            <div class="flex flex-col flex-1">
+                                <h3
+                                    class="text-[#111418] dark:text-white font-medium text-base line-clamp-2 min-h-[3rem]">
+                                    iPad Air 5 M1 WiFi 64GB</h3>
+                                <div class="flex items-end gap-2 mt-2">
+                                    <span class="text-primary text-lg font-bold">14.690.000₫</span>
+                                </div>
+                                <div class="flex items-center gap-1 mt-2">
+                                    <div class="flex text-yellow-400 text-sm">
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                        <span class="material-symbols-outlined text-[16px] fill-current">star</span>
+                                    </div>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">(205)</span>
+                                </div>
+                            </div>
+                            <button
+                                class="w-full mt-2 h-10 border border-primary text-primary hover:bg-primary hover:text-white rounded-lg font-bold text-sm transition-colors flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 lg:opacity-100">
+                                <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                Thêm vào giỏ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Banner Secondary -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                    <div class="rounded-xl overflow-hidden relative min-h-[200px] flex items-center px-8 bg-cover bg-center"
+                        data-alt="Dark aesthetic kitchen appliances banner"
+                        style='background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJ3V75T24vGT8IqhtZIz5-VOhlB79brkV2ycDt6IMT_gYwPPdJ9qZH3PG7SUM9oJEPFsytZQNhNpZ4TggI7AIFh5W_dOvDowB9WTK909pa54uhH7yJNXjmgiwfX0CxLzmXQ6lZYiabZ_Ce5f746tbZf3DI7ZOHCbFTctH52W_buguohaG9SWNI1KYFXudbJvmtZqaGPswnv2SdSUJnf-mNRaRKGA-treKcXH53ZvKmYZyHqgKWHaj0xDH0Bt34BgoBBJdCHXcdgk4y");'>
+                        <div class="relative z-10">
+                            <h3 class="text-white text-2xl font-bold mb-2">Gia dụng bếp <br />Hiện đại</h3>
+                            <button
+                                class="text-white bg-white/20 hover:bg-white/30 backdrop-blur px-4 py-2 rounded-lg text-sm font-bold mt-2">Xem
+                                ngay</button>
+                        </div>
+                    </div>
+                    <div class="rounded-xl overflow-hidden relative min-h-[200px] flex items-center px-8 bg-cover bg-center"
+                        data-alt="Bright laundry room banner with washing machine"
+                        style='background-image: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAEhwiPpsX1aMomONsB-fkxULecRrbQa7rYKsxk3dn8Ko9R4fnk2-dLismlmvPEzPq6l_AP2oI3-O1fD1pDzHG3e8BUe3Osyi_kJ65KsYFP2WpW7gdJYvRsNo4N3lEDbdeLezuyvdRCtepZNafr1ni7ojGlkyqTvy7MD1xq0PtaMAJRklBD9eynLkmGCj38GxpF7NZ41DQ1_33NBQbdYcciJ_cJNVseXVmlWKWIKflP29xsYSePj-sgcdMcr7MLow3ojvSo_hlhywZ4");'>
+                        <div class="relative z-10">
+                            <h3 class="text-white text-2xl font-bold mb-2">Giặt giũ <br />Thông minh</h3>
+                            <button
+                                class="text-white bg-white/20 hover:bg-white/30 backdrop-blur px-4 py-2 rounded-lg text-sm font-bold mt-2">Xem
+                                ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-[#1a2632] border-t border-gray-200 dark:border-gray-800 mt-auto pt-16 pb-8">
+            <div class="layout-container flex flex-col items-center">
+                <div
+                    class="max-w-[1200px] w-full px-4 md:px-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+                    <!-- Col 1 -->
+                    <div class="flex flex-col gap-4">
+                        <div class="flex items-center gap-2">
+                            <div class="size-6 text-primary flex items-center justify-center">
+                                <span class="material-symbols-outlined">bolt</span>
+                            </div>
+                            <span class="text-lg font-bold text-[#111418] dark:text-white">Điện Máy Xanh</span>
+                        </div>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">
+                            Hệ thống bán lẻ điện máy, gia dụng, công nghệ chính hãng hàng đầu Việt Nam.
+                        </p>
+                        <div class="flex gap-4">
+                            <a class="text-gray-400 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">social_leaderboard</span></a>
+                            <a class="text-gray-400 hover:text-primary" href="#"><span
+                                    class="material-symbols-outlined">smart_display</span></a>
+                        </div>
+                    </div>
+                    <!-- Col 2 -->
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Thông tin &amp; Chính sách</h4>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Lịch sử mua
+                            hàng</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Chính sách bảo
+                            hành</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Chính sách đổi
+                            trả</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Giao hàng &amp;
+                            Lắp đặt</a>
+                    </div>
+                    <!-- Col 3 -->
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Hỗ trợ khách hàng</h4>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Tổng đài hỗ trợ:
+                            1900 1234</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Tổng đài khiếu
+                            nại: 1900 5678</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Hệ thống cửa
+                            hàng</a>
+                        <a class="text-sm text-gray-500 dark:text-gray-400 hover:text-primary" href="#">Hướng dẫn mua
+                            online</a>
+                    </div>
+                    <!-- Col 4 -->
+                    <div class="flex flex-col gap-3">
+                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Đăng ký nhận tin</h4>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">Nhận thông tin khuyến mãi mới nhất.</p>
+                        <div class="flex gap-2">
+                            <input
+                                class="flex-1 bg-gray-50 dark:bg-gray-800 border-none rounded-lg text-sm px-4 focus:ring-1 ring-primary"
+                                placeholder="Email của bạn" type="email" />
+                            <button class="bg-primary text-white rounded-lg px-4 py-2 font-bold text-sm">Gửi</button>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="max-w-[1200px] w-full px-4 md:px-10 border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-xs text-gray-400">© 2024 Điện Máy Xanh UI Concept. All rights reserved.</p>
+                    <div class="flex gap-4">
+                        <img alt="Visa" class="h-4 object-contain opacity-50 grayscale hover:grayscale-0 transition-all"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtCrYj51V7ZR7hbezNSPkI9iOGfMLB1KYMIo4ADX22pY_cyMK56R5mcD4jScd90aoFS64_SJaFpI4kFiaMOHulpf91HJypm1yIqxeqi9xWGCbhEZxXTeifGAl5wknfxep-jF3K1ACjzKrnXckz34zS30SO85Vm7IJK6KuyEwBt8uoHbvsI3Lh8F6I5I6V8cNxYLXWPwpyXswST0rbVdPXwsLjc56SGAMlrkMEm82CsUydG4ZUUkIyxzVRc0M18GoNFOSz-y17sZ6Yz" />
+                        <img alt="Mastercard"
+                            class="h-4 object-contain opacity-50 grayscale hover:grayscale-0 transition-all"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5jQpu4Yta0cVbz6qRRPxbNfU6IDdUrM1kcoCyWK1VWyXo1cD_j6sbAkQmoIVHsa7wNUvYRLbeoeWSKajWNPy-e5g2L9wt2Q8G7ABsCjL81SniEUcNFnLxh-BDM7tSG8aKUuOj-zfjo6FY7oRK59fuEPGFDp9JJSGPL2o3u1686xCBhA2loiPYwF2udP0nFCfxEzxhKTjA07Cl5uYIHWEK4Rvt_fcEKZXDc8E3ANsJ8UWJUBSYiuqkzVNbsoKB0VH701VqZqu_Ar9S" />
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/authFetch.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+
+</html>

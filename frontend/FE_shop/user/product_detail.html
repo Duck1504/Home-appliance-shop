@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Chi tiết sản phẩm - ElectroShop</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200 transition-colors duration-200">
+    <!-- Navigation -->
+    <nav
+        class="sticky top-0 z-50 bg-white/80 dark:bg-[#15202b]/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+        <header class="sticky top-0 z-50 bg-white dark:bg-[#1a2632] border-b border-gray-200 dark:border-gray-800">
+            <div class="layout-container flex flex-col justify-center">
+                <div class="px-4 md:px-10 lg:px-40 py-3">
+                    <div class="flex items-center justify-between gap-4">
+                        <!-- Logo -->
+                        <div class="flex items-center gap-2 cursor-pointer">
+                            <a href="/index.html" class="flex items-center gap-2">
+                                <div class="size-8 text-primary flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-3xl">bolt</span>
+                                </div>
+                                <h2
+                                    class="text-[#111418] dark:text-white text-xl font-bold leading-tight tracking-tight">
+                                    Điện Máy Xanh
+                                </h2>
+                            </a>
+                        </div>
+                        <!-- Search Bar (Hidden on mobile, visible on tablet+) -->
+                        <div class="hidden md:flex flex-1 max-w-[600px] mx-8">
+                            <label
+                                class="flex w-full items-center h-10 rounded-lg bg-[#f0f2f4] dark:bg-gray-800 overflow-hidden group focus-within:ring-2 ring-primary/50 transition-all">
+                                <div
+                                    class="pl-4 pr-2 text-[#617589] dark:text-gray-400 flex items-center justify-center">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <input
+                                    class="w-full bg-transparent border-none text-sm text-[#111418] dark:text-white placeholder:text-[#617589] focus:ring-0 h-full"
+                                    placeholder="Bạn tìm gì hôm nay? (Tivi, Tủ lạnh, Máy giặt...)" />
+                                <button
+                                    class="h-full px-4 bg-primary text-white font-bold text-sm hover:bg-blue-600 transition-colors">
+                                    Tìm kiếm
+                                </button>
+                            </label>
+                        </div>
+                        <!-- Actions -->
+                        <div class="flex items-center gap-4">
+                            <!-- Mobile Search Icon -->
+                            <button
+                                class="md:hidden flex items-center justify-center size-10 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700">
+                                <span class="material-symbols-outlined">search</span>
+                            </button>
+                            <!-- User Actions -->
+                            <div class="flex items-center gap-2">
+                                <button id="loginBtn" onclick="goToLogin()"
+                                    class="h-10 px-4 hidden items-center justify-center rounded-lg border border-gray-200 hover:bg-gray-50 text-sm font-bold">
+                                    Đăng nhập
+                                </button>
+                            </div>
+
+                            <div id="userInfo" class="hidden items-center gap-3">
+                                <span id="username" class="font-semibold"></span>
+                                <button onclick="logout()"
+                                    class="h-10 px-4 rounded-lg border border-gray-200 hover:bg-gray-100 text-sm font-bold">
+                                    Đăng xuất
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="Cart/Cart.html"
+                                    class="relative flex items-center justify-center size-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 text-[#111418] dark:text-white transition-colors">
+                                    <span class="material-symbols-outlined">shopping_cart</span>
+                                    <span class="absolute top-1 right-1 size-2 bg-red-500 rounded-full"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </nav>
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Breadcrumbs -->
+        <nav aria-label="Breadcrumb" class="flex mb-6 text-sm text-gray-500 dark:text-gray-400">
+            <ol class="inline-flex items-center space-x-1 md:space-x-3">
+                <li class="inline-flex items-center hover:text-primary cursor-pointer">
+                    <span class="material-icons text-sm mr-1">home</span> Trang chủ
+                </li>
+                <li><span class="mx-1">/</span></li>
+                <li class="hover:text-primary cursor-pointer">Điện lạnh</li>
+                <li><span class="mx-1">/</span></li>
+                <li class="hover:text-primary cursor-pointer">Tủ lạnh</li>
+                <li><span class="mx-1">/</span></li>
+                <li aria-current="page" class="text-gray-900 dark:text-white font-medium">Tủ lạnh Inverter AI Smart 500L
+                </li>
+            </ol>
+        </nav>
+        <!-- Product Overview Section -->
+        <div
+            class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 mb-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-x-12 lg:items-start">
+                <div class="flex flex-col-reverse">
+
+                    <!-- Thumbnail list -->
+                    <div class="hidden mt-6 w-full max-w-2xl mx-auto sm:block lg:max-w-none">
+                        <div id="thumbList" aria-label="Choose an image" class="grid grid-cols-4 gap-4">
+                            <!-- JS sẽ render thumbnail ở đây -->
+                        </div>
+                    </div>
+
+                    <!-- Main Image -->
+                    <div
+                        class="relative aspect-w-1 aspect-h-1 w-full bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden group">
+                        <img id="mainImage" alt="Ảnh sản phẩm"
+                            class="h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
+                            src="images/no-image.png" />
+                    </div>
+
+                </div>
+                <!-- Right Column: Product Info -->
+                <div class="mt-10 px-4 sm:mt-16 sm:px-0 lg:mt-0">
+                    <div class="mb-4">
+                        <span class="text-primary font-semibold text-sm tracking-wider uppercase">LG Electronics</span>
+                        <h1 id="productName"
+                            class="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white mt-1">Tủ lạnh
+                            Inverter AI Smart Frost 500L - Màu Bạc</h1>
+                    </div>
+                    <!-- Reviews -->
+                    <div class="flex items-center mb-6">
+                        <div class="flex items-center text-yellow-400">
+                            <span class="material-icons text-xl">star</span>
+                            <span class="material-icons text-xl">star</span>
+                            <span class="material-icons text-xl">star</span>
+                            <span class="material-icons text-xl">star</span>
+                            <span class="material-icons text-xl text-gray-300 dark:text-gray-600">star</span>
+                        </div>
+                        <p class="ml-2 text-sm text-gray-500 dark:text-gray-400">(142 đánh giá)</p>
+                        <span class="mx-2 text-gray-300">|</span>
+                        <span class="text-green-600 font-medium text-sm flex items-center gap-1">
+                            <span class="material-icons text-base">check_circle</span> Còn hàng
+                        </span>
+                    </div>
+                    <!-- Price -->
+                    <div class="mt-3">
+                        <p id="productPrice" class="text-4xl font-bold text-primary">18.590.000₫</p>
+                    </div>
+                    <div class="mt-6 border-t border-gray-200 dark:border-gray-700 pt-6">
+                        <!-- Variants -->
+                        <div class="mt-6">
+                            <h3 class="text-sm font-medium text-gray-900 dark:text-white">Dung tích</h3>
+                            <div class="mt-3 flex items-center space-x-3">
+                                <button id="capacity"
+                                    class="border border-primary bg-primary/10 text-primary font-medium py-2 px-4 rounded-lg text-sm">500L</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Actions -->
+                    <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="flex-1 bg-primary border border-transparent rounded-lg py-3 px-8 flex items-center justify-center text-base font-bold text-white hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary shadow-lg shadow-blue-500/30 transition-all"
+                            type="button">
+                            <span class="material-icons mr-2">shopping_cart</span> Thêm vào giỏ hàng
+                        </button>
+                        <button
+                            class="flex-1 bg-white dark:bg-gray-800 border-2 border-primary rounded-lg py-3 px-8 flex items-center justify-center text-base font-bold text-primary hover:bg-blue-50 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-all"
+                            type="button">
+                            Mua ngay
+                        </button>
+                    </div>
+                    <!-- Policies -->
+                    <div class="mt-8 grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                            <span class="material-icons text-primary">verified_user</span>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white">Bảo hành 2 năm</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs">Chính hãng tại nhà</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                            <span class="material-icons text-primary">local_shipping</span>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white">Miễn phí vận chuyển</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs">Trong nội thành HN/HCM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                            <span class="material-icons text-primary">autorenew</span>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white">Đổi trả 7 ngày</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs">Nếu có lỗi nhà sản xuất</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 p-3 bg-gray-50 dark:bg-gray-800 rounded-lg">
+                            <span class="material-icons text-primary">build</span>
+                            <div>
+                                <p class="font-bold text-gray-900 dark:text-white">Lắp đặt miễn phí</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-xs">Kỹ thuật viên chuyên nghiệp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Details Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left: Description & Reviews (Span 2) -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Description -->
+                <section
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-6">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">description</span> Mô tả sản phẩm
+                    </h2>
+                    <div class="prose dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
+                        <p id="productDesc" class="mt-4 text-gray-700"></p>
+                    </div>
+                </section>
+            </div>
+            <!-- Right: Specs Table (Span 1) -->
+            <div class="lg:col-span-1">
+                <div
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 p-6 sticky top-24">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+                        <span class="material-icons text-primary">settings</span>
+                        Thông số kỹ thuật
+                    </h2>
+
+                    <div class="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700">
+                        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                            <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+
+                                <tr class="bg-gray-50 dark:bg-gray-800/50">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Kiểu tủ
+                                    </td>
+                                    <td id="kieutu" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-white dark:bg-transparent">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Nhãn hiệu
+                                    </td>
+                                    <td id="nhanhieu" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-gray-50 dark:bg-gray-800/50">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Dung tích
+                                    </td>
+                                    <td id="dungtich" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-white dark:bg-transparent">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Kích
+                                        thước</td>
+                                    <td id="kichthuoc" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-gray-50 dark:bg-gray-800/50">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Tiêu thụ
+                                        điện</td>
+                                    <td id="nangluong" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-white dark:bg-transparent">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Trọng
+                                        lượng</td>
+                                    <td id="trongluong" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-gray-50 dark:bg-gray-800/50">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Năm sản
+                                        xuất</td>
+                                    <td id="namsx" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                                <tr class="bg-white dark:bg-transparent">
+                                    <td class="px-4 py-3 text-sm font-medium text-gray-500 dark:text-gray-400">Nơi sản
+                                        xuất</td>
+                                    <td id="madein" class="px-4 py-3 text-sm text-gray-900 dark:text-white"></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- Related Products -->
+        <div class="mt-16">
+            <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Sản phẩm tương tự</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-md transition-shadow group">
+                    <div class="relative">
+                        <img alt="Tủ lạnh Samsung Side by Side"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="Dark grey side-by-side refrigerator"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx9vMP73-fEApbfro6AsmbMdAH6QrszhzE1bOfX-B6_YfFoqzVfYEgGseGXppbAaFcSYFGCvTKCOQv_-8u_9hf-bQ0w3LKLJvdGz3LTy8qPY-MqnLJ8N039fdFOUK-0EhM0em10NIyxS5ewREKyK5i-L-5f2FPlOWoAhejpz0P1MqHi2e63t71SsdYIyDAvesmY4sBwUM28sx4I2KdAwRxZO_FbL0rHbbL8_4uwZ1FamsiFq-kFrtMF_21dO8U-XCe6xQjOZgZkglv" />
+                        <span
+                            class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded">MỚI</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem]">Tủ
+                            lạnh Samsung Inverter 480L Side By Side</h3>
+                        <div class="flex items-end gap-2 mt-2">
+                            <span class="text-lg font-bold text-primary">15.900.000₫</span>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="flex text-yellow-400 text-xs">
+                                <span class="material-icons text-sm">star</span> 4.5
+                            </div>
+                            <button class="text-primary hover:bg-primary/10 p-1 rounded-full"><span
+                                    class="material-icons">add_shopping_cart</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-md transition-shadow group">
+                    <div class="relative">
+                        <img alt="Tủ lạnh Hitachi ngăn đá trên"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="Classic top freezer refrigerator in white"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWLtSiata9UUrjoRH_XfcH_lk_eEn5TAvO947Zz9Ze-KHTy96hk8InBCDlleydVjohJqtFCBNjs_MupwvPRZ19_ntmRAu3EPt_ev1-zY46Okbjih6R2BO1WfPu-RAGgWLU294EXWhfcaX4koxyqU1JJTtXQj1i3ECBt1JE-NYac09V2flGpkjEfdzH-Nh4Jwsr_zEFu8iebV5X5WlReEgETOUaZsrHeo6PlAVhB_7I8dkMFjAEZ6RmBZaxp4F5KO5Y8GuwKvjvZQPN" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem]">Tủ
+                            lạnh Hitachi Inverter 390L Ngăn đá trên</h3>
+                        <div class="flex items-end gap-2 mt-2">
+                            <span class="text-lg font-bold text-primary">11.200.000₫</span>
+                            <span class="text-xs text-gray-400 line-through">13.000.000₫</span>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="flex text-yellow-400 text-xs">
+                                <span class="material-icons text-sm">star</span> 4.7
+                            </div>
+                            <button class="text-primary hover:bg-primary/10 p-1 rounded-full"><span
+                                    class="material-icons">add_shopping_cart</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-md transition-shadow group">
+                    <div class="relative">
+                        <img alt="Tủ lạnh Panasonic mặt gương"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="Kitchen interior with shiny black fridge"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJmXDJAXY3jeq0NcRSGkQql8V6TLr7HxKQ-AYnw_GhdQzDjnI7jbHC0iBl4bItgpBBBbWJJKchm7O5IDHu2G5lPXsh8_CVw9kjBGwo3LDh6klRVdMSisXnkdCyEGdy3go5VS0to4aIFKf9oRyEjsmyO_sR5UGfk81HvSMTmmBnwUADGn8buj9D8yJWh2GNAO8TMfaimfKWfAMwHiJDogDmG2iW-bQkkEUqtfIN2MdnEjz_tz0Q44FTvNs1m4DBG6HAJYj91pVL_UsW" />
+                        <span
+                            class="absolute top-2 left-2 bg-red-500 text-white text-[10px] font-bold px-2 py-1 rounded">-10%</span>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem]">Tủ
+                            lạnh Panasonic Prime+ Edition 550L</h3>
+                        <div class="flex items-end gap-2 mt-2">
+                            <span class="text-lg font-bold text-primary">24.500.000₫</span>
+                            <span class="text-xs text-gray-400 line-through">27.000.000₫</span>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="flex text-yellow-400 text-xs">
+                                <span class="material-icons text-sm">star</span> 4.9
+                            </div>
+                            <button class="text-primary hover:bg-primary/10 p-1 rounded-full"><span
+                                    class="material-icons">add_shopping_cart</span></button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white dark:bg-[#15202b] rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 overflow-hidden hover:shadow-md transition-shadow group">
+                    <div class="relative">
+                        <img alt="Tủ lạnh Toshiba nhỏ gọn"
+                            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                            data-alt="Small compact refrigerator in apartment setting"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvNFhdymwUoMJ4Th1HSkqsxU2yom75PhVu9NpVmmFQKbdzD6gmUrv1bqZgA7ykC9_7raUggypcnSY6mZ9fMOg-IdmKS6uHBUaN6Djz7Jvi-nn5Ixo8yRc8WREen8TqS_A7CIqFulofBFz76p3gITmy2p2I3-YRSrVhVW2GLAwTtE1weh-6kj0Ca-cP-49g72iuUE3ntMj-_vwxhfx_LoNaNTM0HaiOFHxtdwdAwavUu92hP-fGa1lP2cY-DC8Lt1NqDa0SG5MjNGIx" />
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-sm font-medium text-gray-900 dark:text-white line-clamp-2 min-h-[2.5rem]">Tủ
+                            lạnh Toshiba Inverter 233L GR-A28VM</h3>
+                        <div class="flex items-end gap-2 mt-2">
+                            <span class="text-lg font-bold text-primary">6.490.000₫</span>
+                        </div>
+                        <div class="mt-3 flex items-center justify-between">
+                            <div class="flex text-yellow-400 text-xs">
+                                <span class="material-icons text-sm">star</span> 4.2
+                            </div>
+                            <button class="text-primary hover:bg-primary/10 p-1 rounded-full"><span
+                                    class="material-icons">add_shopping_cart</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-[#15202b] border-t border-gray-200 dark:border-gray-800 mt-12 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                            E</div>
+                        <span class="font-bold text-xl text-gray-900 dark:text-white">ElectroShop</span>
+                    </div>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Siêu thị điện máy hàng đầu Việt Nam. Cam kết
+                        chính hãng 100%.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Hỗ trợ khách hàng</h4>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li><a class="hover:text-primary" href="#">Trung tâm trợ giúp</a></li>
+                        <li><a class="hover:text-primary" href="#">Hướng dẫn mua hàng</a></li>
+                        <li><a class="hover:text-primary" href="#">Chính sách bảo hành</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Về ElectroShop</h4>
+                    <ul class="space-y-2 text-sm text-gray-500 dark:text-gray-400">
+                        <li><a class="hover:text-primary" href="#">Giới thiệu công ty</a></li>
+                        <li><a class="hover:text-primary" href="#">Tuyển dụng</a></li>
+                        <li><a class="hover:text-primary" href="#">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-900 dark:text-white mb-4">Kết nối</h4>
+                    <div class="flex space-x-4">
+                        <a class="text-gray-400 hover:text-primary" href="#"><span
+                                class="material-icons">facebook</span></a>
+                        <a class="text-gray-400 hover:text-primary" href="#"><span
+                                class="material-icons">email</span></a>
+                    </div>
+                </div>
+            </div>
+            <div
+                class="border-t border-gray-200 dark:border-gray-800 mt-8 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+                <p>© 2023 ElectroShop. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Floating Mobile Bottom Bar (Optional for completeness on desktop resizing) -->
+    <div
+        class="md:hidden fixed bottom-0 left-0 w-full bg-white dark:bg-[#15202b] border-t border-gray-200 dark:border-gray-800 p-4 shadow-lg flex items-center justify-between z-50">
+        <div class="flex flex-col">
+            <span class="text-xs text-gray-500 dark:text-gray-400">Tổng cộng</span>
+            <span class="font-bold text-primary text-lg">18.590.000₫</span>
+        </div>
+        <button class="bg-primary text-white font-bold py-2 px-6 rounded-lg shadow-lg shadow-blue-500/30">
+            Mua ngay
+        </button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/auth.js"></script>
+    <script src="/js/authFetch.js"></script>
+    <script src="../js/product_detail.js"></script>
+    <script src="../js/product.js"></script>
+</body>
+
+</html>
